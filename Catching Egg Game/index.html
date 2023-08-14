@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Catch Me If You Can</title>
+	<script src="project1.js" type="text/javascript" defer></script>
+	<script src="project2.js" type="text/javascript" defer></script>
+</head>
+<body onload ="setUp()">
+		<h1>Catch Me If You Can</h1>
+		
+    <canvas id="myCanvas" height="400" width="350" style="border: 1px solid black"></canvas>
+
+	<script>
+        var ds = document.getElementById("myCanvas");
+		var cx = ds.getContext("2d");
+	    
+		var bg = new Image();
+		bg.src = "city500.png";
+		cx.drawImage(bg,0,0)
+		
+		var img = new Image();
+		img.src = "bird.png";
+
+		var bar= new Image();
+		bar.src ="bar.png";
+
+		img.onload = function () {
+			
+			cx.drawImage(bg,0,0)
+			cx.drawImage(img,10,10,50,50)//bird
+			cx.drawImage(img,90,10,50,50)//bird
+			cx.drawImage(img,170,10,50,50)//bird
+			cx.drawImage(img,250,10,50,50)//bird
+			cx.drawImage(bar,0,50,450,20)//bar
+		}
+		
+		//bowl
+		var bReady = false;
+		var bImage = new Image();
+		bImage.onload = function(){
+			bReady = true
+		};
+	    bImage.src = "bowl.png";
+	</script>
+</body>
+</html>
